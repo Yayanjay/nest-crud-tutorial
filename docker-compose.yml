@@ -1,0 +1,16 @@
+version: '3'
+services:
+  nest_db:
+    container_name: nest_db
+    image: mysql:latest
+    restart: always
+    volumes:
+      - ./data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=nestjs_tutorial
+      - MYSQL_USER=nestadmin
+      - MYSQL_PASSWORD=nestadmin
+    ports:
+      - 3306:3306
+    
