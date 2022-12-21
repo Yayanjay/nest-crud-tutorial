@@ -27,6 +27,7 @@
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/typeorm": "^9.0.1",
+    "@types/firebase": "^3.2.1",
     "firebase": "^9.15.0",
     "firebase-admin": "^11.4.0",
     "mysql2": "^2.3.3",

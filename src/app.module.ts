@@ -5,7 +5,9 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { UsersModule } from './users/users.module';
 import { User } from './users/entities/user.entity';
+import { FirebaseService } from './firebase/firebase.service';
 import { AuthModule } from './auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -17,8 +19,8 @@ import { AuthModule } from './auth/auth.module';
     database: 'nestjs_tutorial',
     entities: [User],
     synchronize: true
-  }), UsersModule, AuthModule],
+  }), UsersModule, AuthModule, ConfigModule.forRoot()],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, FirebaseService],
 })
 export class AppModule {}
